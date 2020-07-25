@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="external/jquery/jquery.js"></script>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        div *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #potez{
+           
+            max-height: 30px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            float: left;
+            border-right: 5px;
+            border:  1px solid black;
+            border-style: inset;
+            text-align: center;
+            background: #fff;
+            transition: .85s linear;
+        }
+        .turnheightlight{
+            background: #5cb85c !important;
+            color: #fff;
+        }
+        #game
+        {
+            max-height: 604px;
+            max-width: 604px;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            margin: 20px auto;
+        }
+        .indeks{
+            width: 100%;
+            height: 100%;
+            max-width: 50px;
+            max-height: 50px;
+            float: left;
+            margin: 3px;
+            padding:  15px 0 0 20px;
+        }
+        .bijeli{
+            border: 1px solid #00a4a2;
+            width: 100%;
+            height: 100%;
+            max-width: 60px;
+            max-height: 60px;
+            float: left;
+            margin: 3px;
+            transition: all 0.5s ease-in-out;
+            border-radius: 5px;
+            padding:  0 0 0 8px;
+            font-size: 30pt;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .sivi{
+            border: 1px solid #00a4a2;
+            background: rgba(29, 100, 206, 0.8);
+            width: 100%;
+            height: 100%;
+            max-width: 60px;
+            max-height: 60px;
+            float: left;
+            margin: 3px;
+            transition: all 0.5s ease-in-out;
+            border-radius: 5px;
+            padding:  0 0 0 8px;
+            font-size: 30pt;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .bijeli:hover{
+            color:  #fff;
+            background-color: rgba(211, 143, 18, 0.9);
+            z-index: 2;
+        }
+        .sivi:hover{
+            color:  #fff;
+            background-color: rgba(211, 143, 18, 0.9);
+            z-index: 2;
+      }
+        .green{
+            background: rgb(65,161,73) !important;
+        }
+        .green:hover{
+            opacity: 0.3;
+        }
+           </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="game">
+        <div class="indeks">8</div>
+        <div class="polje bijeli" id="1_8"></div>
+        <div class="polje sivi" id="2_8"></div>
+        <div class="polje bijeli" id="3_8"></div>
+        <div class="polje sivi" id="4_8"></div>
+        <div class="polje bijeli" id="5_8"></div>
+        <div class="polje sivi" id="6_8"></div>
+        <div class="polje bijeli" id="7_8"></div>
+        <div class="polje sivi" id="8_8"></div>
+        <div class="indeks">7</div>
+        <div class="polje sivi" id="1_7"></div>
+        <div class="polje bijeli" id="2_7"></div>
+        <div class="polje sivi" id="3_7"></div>
+        <div class="polje bijeli" id="4_7"></div>
+        <div class="polje sivi" id="5_7"></div>
+        <div class="polje bijeli" id="6_7"></div>
+        <div class="polje sivi" id="7_7"></div>
+        <div class="polje bijeli" id="8_7"></div>
+        <div class="indeks">6</div>
+        <div class="polje bijeli" id="1_6"></div>
+        <div class="polje sivi" id="2_6"></div>
+        <div class="polje bijeli" id="3_6"></div>
+        <div class="polje sivi" id="4_6"></div>
+        <div class="polje bijeli" id="5_6"></div>
+        <div class="polje sivi" id="6_6"></div>
+        <div class="polje bijeli" id="7_6"></div>
+        <div class="polje sivi" id="8_6"></div>
+        <div class="indeks">5</div>
+        <div class="polje sivi" id="1_5"></div>
+        <div class="polje bijeli" id="2_5"></div>
+        <div class="polje sivi" id="3_5"></div>
+        <div class="polje bijeli" id="4_5"></div>
+        <div class="polje sivi" id="5_5"></div>
+        <div class="polje bijeli" id="6_5"></div>
+        <div class="polje sivi" id="7_5"></div>
+        <div class="polje bijeli" id="8_5"></div>
+        <div class="indeks">4</div>
+        <div class="polje bijeli" id="1_4"></div>
+        <div class="polje sivi" id="2_4"></div>
+        <div class="polje bijeli" id="3_4"></div>
+        <div class="polje sivi" id="4_4"></div>
+        <div class="polje bijeli" id="5_4"></div>
+        <div class="polje sivi" id="6_4"></div>
+        <div class="polje bijeli" id="7_4"></div>
+        <div class="polje sivi" id="8_4"></div>
+        <div class="indeks">3</div>
+        <div class="polje sivi" id="1_3"></div>
+        <div class="polje bijeli" id="2_3"></div>
+        <div class="polje sivi" id="3_3"></div>
+        <div class="polje bijeli" id="4_3"></div>
+        <div class="polje sivi" id="5_3"></div>
+        <div class="polje bijeli" id="6_3"></div>
+        <div class="polje sivi" id="7_3"></div>
+        <div class="polje bijeli" id="8_3"></div>
+        <div class="indeks">2</div>
+        <div class="polje bijeli" id="1_2"></div>
+        <div class="polje sivi" id="2_2"></div>
+        <div class="polje bijeli" id="3_2"></div>
+        <div class="polje sivi" id="4_2"></div>
+        <div class="polje bijeli" id="5_2"></div>
+        <div class="polje sivi" id="6_2"></div>
+        <div class="polje bijeli" id="7_2"></div>
+        <div class="polje sivi" id="8_2"></div>
+        <div class="indeks">1</div>
+        <div class="polje sivi" id="1_1"></div>
+        <div class="polje bijeli" id="2_1"></div>
+        <div class="polje sivi" id="3_1"></div>
+        <div class="polje bijeli" id="4_1"></div>
+        <div class="polje sivi" id="5_1"></div>
+        <div class="polje bijeli" id="6_1"></div>
+        <div class="polje sivi" id="7_1"></div>
+        <div class="polje bijeli" id="8_1"></div>
+        <div class="indeks"></div>
+        <div class="indeks">a</div>
+        <div class="indeks">b</div>
+        <div class="indeks">c</div>
+        <div class="indeks">d</div>
+        <div class="indeks">e</div>
+        <div class="indeks">f</div>
+        <div class="indeks">g</div>
+        <div class="indeks">h</div>
+        <div id="potez">Na potezu je bijeli</div>
+
+    </div>
+    <script src="Sah-javaScript.js"></script>
+</body>
+</html>
